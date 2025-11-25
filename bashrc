@@ -83,7 +83,7 @@ alias lg="lazygit"
 alias rpi-imager='env QT_STYLE_OVERRIDE= /usr/bin/rpi-imager'
 alias danger="claude --dangerously-skip-permissions"
 alias cdx="/home/matsilva/cmds/cdx"
-alias getpw="$HOME/cmds/unlock-bw.sh"
+alias getpw="$HOME/dotfiles/unlock-bw.sh"
 alias basecamp=/home/matsilva/code/go/bc4/bc4
 
 # ==============================================================================
