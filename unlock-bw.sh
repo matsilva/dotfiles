@@ -47,36 +47,35 @@ notify() {
 }
 
 usage() {
-  cat <<EOF
-${CYAN}Bitwarden CLI Helper${NC}
-
-${YELLOW}Usage:${NC}
-  $(basename "$0") <search_term> [field]    Search and copy credential
-  $(basename "$0") --totp <search_term>     Copy TOTP code
-  $(basename "$0") --show <search_term>     Show item details (no copy)
-  $(basename "$0") --sync                   Sync vault with server
-  $(basename "$0") --lock                   Lock the vault
-  $(basename "$0") --status                 Check vault status
-  $(basename "$0") --help                   Show this help
-
-${YELLOW}Fields:${NC}
-  password  (default)  Copy password
-  username            Copy username
-  uri                 Copy first URI
-  notes               Copy notes
-  totp                Copy TOTP code
-
-${YELLOW}Examples:${NC}
-  $(basename "$0") github                   # Copy github password
-  $(basename "$0") github username          # Copy github username
-  $(basename "$0") --totp github            # Copy github 2FA code
-  $(basename "$0") --show aws               # View aws item details
-
-${YELLOW}Setup:${NC}
-  Create ${PASSWORD_FILE} with your master password.
-  chmod 600 ${PASSWORD_FILE}
-
-EOF
+  local cmd="getpw"
+  echo -e "${CYAN}Bitwarden CLI Helper${NC}"
+  echo ""
+  echo -e "${YELLOW}Usage:${NC}"
+  echo "  $cmd <search_term> [field]    Search and copy credential"
+  echo "  $cmd --totp <search_term>     Copy TOTP code"
+  echo "  $cmd --show <search_term>     Show item details (no copy)"
+  echo "  $cmd --sync                   Sync vault with server"
+  echo "  $cmd --lock                   Lock the vault"
+  echo "  $cmd --status                 Check vault status"
+  echo "  $cmd --help                   Show this help"
+  echo ""
+  echo -e "${YELLOW}Fields:${NC}"
+  echo "  password  (default)  Copy password"
+  echo "  username            Copy username"
+  echo "  uri                 Copy first URI"
+  echo "  notes               Copy notes"
+  echo "  totp                Copy TOTP code"
+  echo ""
+  echo -e "${YELLOW}Examples:${NC}"
+  echo "  $cmd github                   # Copy github password"
+  echo "  $cmd github username          # Copy github username"
+  echo "  $cmd --totp github            # Copy github 2FA code"
+  echo "  $cmd --show aws               # View aws item details"
+  echo ""
+  echo -e "${YELLOW}Setup:${NC}"
+  echo "  Create ${PASSWORD_FILE} with your master password."
+  echo "  chmod 600 ${PASSWORD_FILE}"
+  echo ""
   exit 0
 }
 
